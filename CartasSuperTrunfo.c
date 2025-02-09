@@ -8,17 +8,22 @@
 int main() {
     // Sugestão: Defina variáveis separadas para cada atributo da cidade.
     // Exemplos de atributos: código da cidade, nome, população, área, PIB, número de pontos turísticos.
-    
-    int codigo,pontoturisticos;
-    float pib,area,populacao;
-    char nome[100];
+    // variaveis de entrada de dados
+    int pontoturisticos;
+    float area,populacao, densidade, pib, percapita;
+    char nome[100], estado[100], codigo[100];
 
     // Cadastro das Cartas:
     // Sugestão: Utilize a função scanf para capturar as entradas do usuário para cada atributo.
     // Solicite ao usuário que insira as informações de cada cidade, como o código, nome, população, área, etc.
-    
-    printf ("Digite o codigo da cidade: ");
-    scanf (" %d" ,&codigo);
+    densidade = populacao / area;
+    percapita = pib / populacao;
+
+    printf("Digite de qual estado a carta sera cadastrada: ");
+    scanf ("%s", &estado);
+
+    printf ("Digite o codigo da Carta: ");
+    scanf (" %s" ,&codigo);
 
     printf ("Digite o nome da cidade: ");
     scanf("%s" ,&nome);
@@ -34,14 +39,22 @@ int main() {
 
     printf ("Digite o numero de prontos turisticos: ");
     scanf ("%d", &pontoturisticos);
-
+    
     // Exibição dos Dados das Cartas:
     // Sugestão: Utilize a função printf para exibir as informações das cartas cadastradas de forma clara e organizada.
     // Exiba os valores inseridos para cada atributo da cidade, um por linha.
     // ao adicionar ".2" a uma variavel do tipo float, indica quantas linhas depois da virgula vai ser exibido
-    printf ("\n Nome da ciade: %s - Codigo %d", nome, codigo);
-    printf ("\n Area da cidade: %.2f KM² - PIB; %.2f",area, pib);
-    printf ("\n Numero da população: %.2f - pontos turisticos: %d \n", populacao, pontoturisticos);
+    // saida dos dados cadastrados pelo usuario
+    
+    printf ("\nestado: %s \n", estado);
+    printf ("Codigo da carta: %s \n", codigo);
+    printf ("Nome da Cidade: %s \n", nome);
+    printf ("População: %2.f \n", populacao);
+    printf ("Area: %2.f KM² \n", area);
+    printf ("Densidade Populacional: %2.f pessoal/km² \n", densidade);
+    printf ("PIB: %0.f Biblhoes de reais \n", pib);
+    printf ("PIB per Capita: %0.f reais \n", percapita);
+    printf ("Numero de Pontos Turisticos: %d \n", pontoturisticos);
 
     return 0;
 }
