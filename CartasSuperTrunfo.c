@@ -8,28 +8,30 @@
 int main() {
     // Sugestão: Defina variáveis separadas para cada atributo da cidade.
     // Exemplos de atributos: código da cidade, nome, população, área, PIB, número de pontos turísticos.
-    // variaveis de entrada de dados
-    int pontoturisticos;
-    float area,populacao, densidade, pib, percapita;
-    char nome[100], estado[100], codigo[100];
+    
+    int pontoturisticos,populacao;
+    float pib,area;
+    char nome[100], codigo[100], estado[100];
+    //variaveis da segunda carta
+    int pontoturisticos2,populacao2;
+    float pib2,area2;
+    char nome2[100], codigo2[100], estado2[100];
 
     // Cadastro das Cartas:
     // Sugestão: Utilize a função scanf para capturar as entradas do usuário para cada atributo.
     // Solicite ao usuário que insira as informações de cada cidade, como o código, nome, população, área, etc.
-    percapita = pib /populacao;
-    densidade = area / populacao;
+    
+    printf("Digite o estado:");
+    scanf("%s", estado);
 
-    printf("Digite de qual estado a carta sera cadastrada: ");
-    scanf ("%s", &estado);
-
-    printf ("Digite o codigo da Carta: ");
+    printf ("Digite o codigo da carta: ");
     scanf (" %s" ,&codigo);
 
     printf ("Digite o nome da cidade: ");
     scanf("%s" ,&nome);
 
     printf ("Digite o numero da populaçao: ");
-    scanf (" %f", &populacao);
+    scanf (" %d", &populacao);
 
     printf ("digite a area: ");
     scanf(" %f", &area);
@@ -39,22 +41,40 @@ int main() {
 
     printf ("Digite o numero de prontos turisticos: ");
     scanf ("%d", &pontoturisticos);
+//cadastro da segunda carta
+    printf("\nDigite o estado:");
+    scanf("%s", estado2);
+
+    printf ("Digite o codigo da carta: ");
+    scanf (" %s" ,&codigo2);
+
+    printf ("Digite o nome da cidade: ");
+    scanf("%s" ,&nome2);
+
+    printf ("Digite o numero da populaçao: ");
+    scanf (" %d", &populacao2);
+
+    printf ("digite a area: ");
+    scanf(" %f", &area2);
+
+    printf ("Digite o PIB: ");
+    scanf ("%f", &pib2);
+
+    printf ("Digite o numero de prontos turisticos: ");
+    scanf ("%d", &pontoturisticos2);
 
     // Exibição dos Dados das Cartas:
     // Sugestão: Utilize a função printf para exibir as informações das cartas cadastradas de forma clara e organizada.
     // Exiba os valores inseridos para cada atributo da cidade, um por linha.
     // ao adicionar ".2" a uma variavel do tipo float, indica quantas linhas depois da virgula vai ser exibido
-    // saida dos dados cadastrados pelo usuario
     
-    printf ("\nestado: %s \n", estado);
-    printf ("Codigo da carta: %s \n", codigo);
-    printf ("Nome da Cidade: %s \n", nome);
-    printf ("População: %.2f \n", populacao);
-    printf ("Area: %.2f KM² \n", area);
-    printf ("Densidade Populacional: %.2f pessoal/km² \n", densidade);
-    printf ("PIB: %.2f Biblhoes de reais \n", pib);
-    printf ("PIB per Capita: %.2f reais \n", percapita);
-    printf ("Numero de Pontos Turisticos: %d \n", pontoturisticos);
+    printf ("\nCarta 1: \nEstado:%s\nNome da cidade: %s \nCodigo %s",estado, nome, codigo);
+    printf ("\n Area da cidade: %.2f KM² \nPIB; %.2f",area, pib);
+    printf ("\n Numero da população: %d \npontos turisticos: %d\n", populacao, pontoturisticos);
+    //exibiçao dos dados da segunda carta
+    printf ("\nCarta 2: \nestado:%s\nNome da cidade: %s \nCodigo %s",estado2, nome2, codigo2);
+    printf ("\n Area da cidade: %.2f KM² \nPIB; %.2f",area2, pib2);
+    printf ("\n Numero da população: %d \npontos turisticos: %d\n", populacao2, pontoturisticos2);
 
     return 0;
-}
+}    
