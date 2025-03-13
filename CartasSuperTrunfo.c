@@ -10,11 +10,11 @@ int main() {
     // Exemplos de atributos: código da cidade, nome, população, área, PIB, número de pontos turísticos.
     
     int pontoturisticos,populacao;
-    float pib,area;
+    float pib,area,percapita,densidade;
     char nome[100], codigo[100], estado[100];
     //variaveis da segunda carta
     int pontoturisticos2,populacao2;
-    float pib2,area2;
+    float pib2,area2,percapita2,densidade2;
     char nome2[100], codigo2[100], estado2[100];
 
     // Cadastro das Cartas:
@@ -41,6 +41,11 @@ int main() {
 
     printf ("Digite o numero de prontos turisticos: ");
     scanf ("%d", &pontoturisticos);
+
+    densidade = (float) populacao / area;
+    percapita = (float) pib / populacao;
+
+
 //cadastro da segunda carta
     printf("\nDigite o estado:");
     scanf("%s", estado2);
@@ -63,6 +68,9 @@ int main() {
     printf ("Digite o numero de prontos turisticos: ");
     scanf ("%d", &pontoturisticos2);
 
+    densidade2 = (float) populacao2 / area2;
+    percapita2 = (float) pib2 / populacao2;
+
     // Exibição dos Dados das Cartas:
     // Sugestão: Utilize a função printf para exibir as informações das cartas cadastradas de forma clara e organizada.
     // Exiba os valores inseridos para cada atributo da cidade, um por linha.
@@ -71,10 +79,17 @@ int main() {
     printf ("\nCarta 1: \nEstado:%s\nNome da cidade: %s \nCodigo %s",estado, nome, codigo);
     printf ("\n Area da cidade: %.2f KM² \nPIB; %.2f",area, pib);
     printf ("\n Numero da população: %d \npontos turisticos: %d\n", populacao, pontoturisticos);
+    printf("Densidade Populacional:%.2f\n",densidade);
+    printf("PIB per Capita:%.2f reais\n",percapita);
+    
     //exibiçao dos dados da segunda carta
+    
     printf ("\nCarta 2: \nestado:%s\nNome da cidade: %s \nCodigo %s",estado2, nome2, codigo2);
     printf ("\n Area da cidade: %.2f KM² \nPIB; %.2f",area2, pib2);
     printf ("\n Numero da população: %d \npontos turisticos: %d\n", populacao2, pontoturisticos2);
+    printf("Densidade Populacional:%.2f\n",densidade2);
+    printf("PIB per Capita:%.2f reais\n",percapita2);
+
 
     return 0;
 }    
